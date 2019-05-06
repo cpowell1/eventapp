@@ -5,7 +5,7 @@ import { EventService } from '../event.service';
   selector: 'app-eventlistings',
   templateUrl: './eventlistings.component.html',
   styleUrls: ['./eventlistings.component.css'],
-  providers: [EventService]
+  providers: [ EventService ]
 })
 export class EventlistingsComponent implements OnInit {
 
@@ -13,6 +13,7 @@ export class EventlistingsComponent implements OnInit {
   }
 
   eventList = null;
+  eventUrl = '';
 
   title = 'Nashville Social Setting';
 
@@ -27,7 +28,7 @@ export class EventlistingsComponent implements OnInit {
 
   ngOnInit(){
      this.eventList = this.eventService.listEvents();
-
+     this.eventUrl = this.eventService.eventUrl;
   }
 
 }

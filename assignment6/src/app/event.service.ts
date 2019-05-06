@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class EventService {
 
+  eventUrl: '';
+
   eventList = [
    {
      _id: 1,
@@ -32,7 +34,7 @@ export class EventService {
   return this.eventList;
   }
 
-  getPhoto(id){
+  getEvent(id){
   return this.eventList.find((el) => {return el._id == id});
   }
 }

@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class EventComponent implements OnInit {
 
   @Input() event;
+  @Input() baseUrl;
   @Output() attendanceEvent = new EventEmitter<string>();
 
   going:number = 0;
@@ -29,6 +30,7 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.event.displayurl = this.baseUrl + this.event.imageurl;
   }
 
 }
