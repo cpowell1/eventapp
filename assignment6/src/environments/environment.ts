@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  //eventUrl:'https://apps.learningapi.com'
 };
 
 /*

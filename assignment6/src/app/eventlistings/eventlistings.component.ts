@@ -13,7 +13,7 @@ export class EventlistingsComponent implements OnInit {
   }
 
   eventList = null;
-  eventUrl = '';
+  eventUrl = "";
 
   title = 'Nashville Social Setting';
 

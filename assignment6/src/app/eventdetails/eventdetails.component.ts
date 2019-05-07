@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from '../event.service';
 
 @Component({
@@ -12,23 +12,23 @@ import { EventService } from '../event.service';
 export class EventdetailsComponent implements OnInit {
 
   event:any;
-  eventdisplayurl:string='';
+  eventdisplayurl = "";
 
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private eventService:EventService  ) { }
 
   ngOnInit() {
     this.getEvent();
   }
 
-  getEvent(): void{
+  getEvent():void{
      const param = this.route.snapshot.paramMap.get('id');
      this.eventService.getEvent(param)
       .subscribe((event) => {
         this.event = event;
         this.eventdisplayurl = this.eventService.eventUrl + this.event.imageurl;
       });
-  }
-
+    }
 }

@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class EventService {
 
-  eventUrl: '';
+  maxId = 3;
+
+  eventUrl = "";
 
   eventList = [
    {
@@ -29,7 +32,7 @@ export class EventService {
    }
  ]
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   listEvents(){
   return this.eventList;
   }
