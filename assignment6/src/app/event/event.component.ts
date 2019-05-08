@@ -15,8 +15,11 @@ export class EventComponent implements OnInit {
   maybe:number = 0;
   notGoing:number = 0;
 
-  constructor() {
+  constructor(private eventService:EventService) {
   }
+
+  eventList = null;
+  eventUrl = '';
 
   numberGoing(title):void{
     this.going+=1;
@@ -30,7 +33,7 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.event.displayurl = this.baseUrl + this.event.imageurl;
+  this.event.displayurl = this.baseUrl + this.event.imageurl;
   }
 
 }

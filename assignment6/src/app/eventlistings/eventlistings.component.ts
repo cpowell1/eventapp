@@ -27,8 +27,15 @@ export class EventlistingsComponent implements OnInit {
   }
 
   ngOnInit(){
-     this.eventList = this.eventService.listEvents();
-     this.eventUrl = this.eventService.eventUrl;
+    this.updateEventList();
+    this.eventUrl = this.eventService.eventUrl
   }
+
+  updateEventList():void{
+     this.eventService.listEvents().subscribe((events)=>{
+       this.eventList = events;
+       this.getNumberOfEvents = this.eventList.length;
+     });
+    }
 
 }
