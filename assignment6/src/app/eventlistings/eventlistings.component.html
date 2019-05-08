@@ -9,5 +9,5 @@
 (attendanceEvent)="handleAttendance($event)
 "></app-event>
 
-<app-newevent [newEvent]="updateEventList()"></app-newevent>
+<app-newevent (newEvent)="updateEventList()"></app-newevent>
 </div>

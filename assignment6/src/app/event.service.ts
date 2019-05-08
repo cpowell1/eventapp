@@ -4,14 +4,12 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class EventService {
-  // track maxId value, will be incremented when we create()
   maxId = 3;
   private apiurl = environment.apiurl;
   eventUrl = environment.eventUrl;
 
   constructor(private http:HttpClient) { }
 
-  // two basic read methods follow: list and "getOne"
   listEvents(){
     return this.http.get(this.apiurl + 'api/events');
   }
@@ -20,9 +18,8 @@ export class EventService {
     return this.http.get(this.apiurl + 'api/events/' + id);
   }
 
-  // Other CRUD methods TBD`
-  createEvent(photo: FormData){
-    return this.http.post(this.apiurl+'api/events', photo);
+  createEvent(event: FormData){
+    return this.http.post(this.apiurl+'api/events', event);
   }
 
   updateEvent(id, data){

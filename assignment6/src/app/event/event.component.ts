@@ -15,7 +15,7 @@ export class EventComponent implements OnInit {
   maybe:number = 0;
   notGoing:number = 0;
 
-  constructor(private eventService:EventService) {
+  constructor() {
   }
 
   eventList = null;
