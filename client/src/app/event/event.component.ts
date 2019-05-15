@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
+
   @Input() event;
   @Input() baseUrl;
   @Output() attendanceEvent = new EventEmitter<string>();
@@ -18,8 +19,8 @@ export class EventComponent implements OnInit {
   constructor() {
   }
 
-  eventList = null;
-  eventUrl = '';
+  //eventList = null;
+  //eventUrl = '';
 
   numberGoing(title):void{
     this.going+=1;

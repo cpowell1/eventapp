@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
 import { EventlistingsComponent } from './eventlistings/eventlistings.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
+import { FormsModule } from '@angular/forms';
 import { NeweventComponent } from './newevent/newevent.component';
 
 const routes:Routes = [
-  { path: '', redirectTo: '/gallery', pathMatch: 'full'},
+  { path: '', redirectTo: '/eventlistings', pathMatch: 'full'},
   { path: 'eventlistings', component: EventlistingsComponent },
   { path: 'event/:id', component: EventdetailsComponent }
 ]
@@ -27,9 +27,8 @@ const routes:Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       routes
     )

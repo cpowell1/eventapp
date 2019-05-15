@@ -4,6 +4,7 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class EventService {
+  // track maxId value, will be incremented when we create()
   maxId = 3;
   private apiurl = environment.apiurl;
   eventUrl = environment.eventUrl;
@@ -19,7 +20,7 @@ export class EventService {
   }
 
   createEvent(event: FormData){
-    return this.http.post(this.apiurl+'api/events', event);
+    return this.http.post(this.apiurl+'api/events/', event);
   }
 
   updateEvent(id, data){

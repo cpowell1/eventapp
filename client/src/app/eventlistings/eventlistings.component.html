@@ -6,8 +6,6 @@
 <app-event *ngFor='let eventObject of eventList'
 [event]="eventObject"
 [baseUrl]="eventUrl"
-(attendanceEvent)="handleAttendance($event)
-"></app-event>
+(attendanceEvent)="handleAttendance($event)"></app-event>
 
-<app-newevent (newEvent)="updateEventList()"></app-newevent>
 </div>

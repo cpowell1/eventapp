@@ -28,7 +28,7 @@ export class EventlistingsComponent implements OnInit {
 
   ngOnInit(){
     this.updateEventList();
-    this.eventUrl = this.eventService.eventUrl
+    this.eventUrl = this.eventService.eventUrl;
   }
 
   updateEventList():void{
