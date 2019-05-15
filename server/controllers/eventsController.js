@@ -38,7 +38,7 @@ exports.getEvents = (req, res, next)=>{
 }
 
 exports.createEvent = (req, res, next)=>{
-  const path = "images/" + req.file.filename;
+  const path = "http://localhost:8080/images/" + req.file.filename;
   const eventInfo  = {
     originalname: req.file.originalname,
     mimetype: req.file.mimetype,

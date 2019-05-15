@@ -12,7 +12,7 @@ export class EventlistingsComponent implements OnInit {
   constructor(private eventService:EventService) {
   }
 
-  eventList = null;
+  eventList = [];
   eventUrl = "";
 
   title = 'Nashville Social Setting';
@@ -32,9 +32,9 @@ export class EventlistingsComponent implements OnInit {
   }
 
   updateEventList():void{
-     this.eventService.listEvents().subscribe((events)=>{
+     this.eventService.listEvents().subscribe((events: any[])=>{
        this.eventList = events;
-       this.getNumberOfEvents = this.eventList.length;
+       // this.getNumberOfEvents = this.eventList.length;
      });
     }
 

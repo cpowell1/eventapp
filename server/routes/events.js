@@ -16,7 +16,6 @@ router.get('/', eventsController.getEvents);
 
 router.post('/', upload.single('image'), eventsController.createEvent);
 
-
 router.get('/:eventid', eventsController.readEvent);
 
 router.post('/:eventid', eventsController.updateEvent); 

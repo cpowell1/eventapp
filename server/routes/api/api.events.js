@@ -5,7 +5,7 @@ const multer = require('multer');
 const eventController = require('../../controllers/eventController');
 const upload = multer({
   storage: eventController.storage,
-  fileFilter: eventController.imageFilter
+  fileFilter: eventController.imageFilter,
 });
 const EventService = eventController.EventService;
 
@@ -48,8 +48,8 @@ router.put('/:eventid', (req, res, next)=>{
 
  
 router.post('/', upload.single('image'), async (req, res, next)=>{
-  const path = "/static/images/" + req.file.filename;
-
+  const tempPath = req.file.path;
+  const path = "/images/" + req.file.filename;
   const event  = {
       originalname: req.file.originalname,
       mimetype: req.file.mimetype,
@@ -58,7 +58,8 @@ router.post('/', upload.single('image'), async (req, res, next)=>{
       filename: req.file.filename,
       size: req.file.size / 1024 | 0,
       date: req.body.date,
-      time: req.body.time
+      time: req.body.time,
+      title: req.body.title
       }
 
  try{

@@ -4,7 +4,8 @@ import { EventService } from '../event.service';
 @Component({
   selector: 'app-newphoto',
   templateUrl: './newevent.component.html',
-  styleUrls: ['./newevent.component.css']
+  styleUrls: ['./newevent.component.css'],
+  providers: [ EventService ]
 })
 export class NeweventComponent implements OnInit {
 

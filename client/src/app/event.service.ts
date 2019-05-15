@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class EventService {
   maxId = 3;
   private apiurl = environment.apiurl;
   eventUrl = environment.eventUrl;
-
+  
   constructor(private http:HttpClient) { }
 
   listEvents(){

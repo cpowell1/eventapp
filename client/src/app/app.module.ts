@@ -14,7 +14,7 @@ import { NeweventComponent } from './newevent/newevent.component';
 const routes:Routes = [
   { path: '', redirectTo: '/eventlistings', pathMatch: 'full'},
   { path: 'eventlistings', component: EventlistingsComponent },
-  { path: 'event/:id', component: EventdetailsComponent }
+  { path: 'event/:id', component: EventdetailsComponent },
 ]
 
 @NgModule({
@@ -33,7 +33,8 @@ const routes:Routes = [
       routes
     )
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

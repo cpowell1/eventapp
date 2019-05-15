@@ -13,7 +13,8 @@ var schema = new Schema({
   date: {type: String, required:false},
   time: {type: String, required:false},
   createdAt: {type: Date},
-  updatedAt: {type: Date}
+  updatedAt: {type: Date},
+  title: {type: String, required:true}
 });
 
 schema.pre('save', function(next){
