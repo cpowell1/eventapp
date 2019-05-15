@@ -34,7 +34,7 @@ export class EventComponent implements OnInit {
   }
 
   ngOnInit() {
-  this.event.displayurl = this.baseUrl + this.event.imageurl;
+  this.event.displayurl = this.baseUrl + 'static/' + this.event.imageurl;
   }
 
 }

@@ -33,7 +33,7 @@ export class EventlistingsComponent implements OnInit {
 
   updateEventList():void{
      this.eventService.listEvents().subscribe((events: any[])=>{
-       this.eventList = events;
+       this.eventList = events || [];
        // this.getNumberOfEvents = this.eventList.length;
      });
     }

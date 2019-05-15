@@ -23,18 +23,9 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
-app.get('/', (req, res)=>{
-  res.end("Go to /api/events")
-});
-// app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/api/events', apievents);
-app.use('/events', routes);
-app.use(express.static('public'))
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-
-
-app.use('/', express.static('../client/dist'));
+// app.use('/events', routes);
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static('../client/dist/assignment6'));
 
 module.exports = app;

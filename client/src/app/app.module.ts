@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { EventComponent } from './event/event.component';
@@ -33,8 +34,7 @@ const routes:Routes = [
       routes
     )
   ],
-  providers: [
-  ],
+  providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
